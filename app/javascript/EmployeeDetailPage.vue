@@ -16,6 +16,9 @@
     <dd>{{ employee.payment }}</dd>
     <dt>Note</dt>
     <dd>{{ employee.note }}</dd>
+    <router-link to="/">
+      <b-button variant="outline-info">BACK</b-button>
+    </router-link>
   </dl>
 </template>
 

@@ -20,11 +20,15 @@
           <td>{{ e.department }}</td>
           <td>{{ e.gender }}</td>
           <td>
-            <button @click="deleteTarget = e.id; showModal = true">Delete</button>
+            <b-button variant="outline-danger" @click="deleteTarget = e.id; showModal = true">Delete</b-button>
           </td>
         </tr>
       </tbody>
     </table>
+    <router-link to="/employees/new">
+      <b-button variant="outline-primary">NEW</b-button>
+    </router-link>
+    <!-- モーダルウィンドウ（デフォルト非表示） -->
     <modal v-if="showModal" @cancel="showModal = false" @ok="deleteEmployee(); showModal = false;">
       <div slot="body">Are you sure?</div>
     </modal>

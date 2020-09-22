@@ -37,7 +37,10 @@
       <label>Note</label>
       <input v-model="employee.note" type="text">
     </div>
-    <button type="submit">Commit</button>
+    <b-button variant="outline-success" type="submit">Commit</b-button>
+    <router-link to="/">
+      <b-button variant="outline-info">BACK</b-button>
+    </router-link>
   </form>
 </template>
 
