@@ -5,7 +5,7 @@
         <li><font color="red">{{ e }}</font></li>
       </ul>
     </div>
-    <table>
+    <table class="table">
       <tbody>
         <tr>
           <th>ID</th>
@@ -21,6 +21,11 @@
           <td>{{ e.gender }}</td>
           <td>
             <b-button variant="outline-danger" @click="deleteTarget = e.id; showModal = true">Delete</b-button>
+          </td>
+          <td>
+            <router-link :to="{ name: 'EmployeeEditPage', params: { id: e.id } }">
+              <b-button variant="outline-warning">Edit</b-button>
+            </router-link>
           </td>
         </tr>
       </tbody>
@@ -49,7 +54,7 @@ export default {
       employees: [],
       showModal: false,
       deleteTarget: -1,
-      errors: ''
+      errors: '',
     }
   },
   mounted () {
