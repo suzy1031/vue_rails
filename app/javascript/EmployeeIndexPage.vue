@@ -20,7 +20,7 @@
           <td>{{ e.department }}</td>
           <td>{{ e.gender }}</td>
           <td>
-            <b-button variant="outline-danger" @click="deleteTarget = e.id; showModal = true">Delete</b-button>
+            <b-button variant="outline-danger" @click="deleteTarget = e.id; showModal = true" v-b-modal.modal-1>Delete</b-button>
           </td>
           <td>
             <router-link :to="{ name: 'EmployeeEditPage', params: { id: e.id } }">
@@ -34,9 +34,9 @@
       <b-button variant="outline-primary">NEW</b-button>
     </router-link>
     <!-- モーダルウィンドウ（デフォルト非表示） -->
-    <modal v-if="showModal" @cancel="showModal = false" @ok="deleteEmployee(); showModal = false;">
-      <div slot="body">Are you sure?</div>
-    </modal>
+    <b-modal id="modal-1" title="BootstrapVue" v-if="showModal" @cancel="showModal = false" @ok="deleteEmployee(); showModal = false;">
+      <p class="my-4">Are you sure?</p>
+    </b-modal>
   </div>
 </template>
 
