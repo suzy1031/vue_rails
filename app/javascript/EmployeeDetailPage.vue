@@ -1,25 +1,55 @@
 <template>
-  <dl>
-    <dt>ID</dt>
-    <dd>{{ employee.id }}</dd>
-    <dt>Name</dt>
-    <dd>{{ employee.name }}</dd>
-    <dt>Department</dt>
-    <dd>{{ employee.department }}</dd>
-    <dt>Gender</dt>
-    <dd>{{ employee.gender }}</dd>
-    <dt>Birth</dt>
-    <dd>{{ employee.birth }}</dd>
-    <dt>Joined Date</dt>
-    <dd>{{ employee.joined_date }}</dd>
-    <dt>Payment</dt>
-    <dd>{{ employee.payment }}</dd>
-    <dt>Note</dt>
-    <dd>{{ employee.note }}</dd>
+  <div>
+    <b-container class="d-flex justify-content-center">
+    <table class="table">
+      <tbody class="detail-list">
+        <tr>
+          <td>ID</td>
+          <td>：</td>
+          <td>{{ employee.id }}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>：</td>
+          <td>{{ employee.name }}</td>
+        </tr>
+        <tr>
+          <td>Department</td>
+          <td>：</td>
+          <td>{{ employee.department }}</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>：</td>
+          <td>{{ employee.gender }}</td>
+        </tr>
+        <tr>
+          <td>Birth</td>
+          <td>：</td>
+          <td>{{ employee.birth }}</td>
+        </tr>
+        <tr>
+          <td>Joined_date</td>
+          <td>：</td>
+          <td>{{ employee.joined_date }}</td>
+        </tr>
+        <tr>
+          <td>Payment</td>
+          <td>：</td>
+          <td>{{ employee.payment }}</td>
+        </tr>
+        <tr>
+          <td>Note</td>
+          <td>：</td>
+          <td>{{ employee.note }}</td>
+        </tr>
+      </tbody>
+    </table>
+    </b-container>
     <router-link to="/">
       <b-button variant="outline-info">TOP</b-button>
     </router-link>
-  </dl>
+  </div>
 </template>
 
 <script>
@@ -39,5 +69,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+.detail-list {
+  border: solid 1px grey;
+  padding: 10px 20px 20px 20px;
+  border-radius: 5px;
+}
 </style>
