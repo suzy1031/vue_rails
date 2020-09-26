@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header :username='name'></Header>
     <b-container class="d-flex justify-content-center">
     <table class="table">
       <tbody class="detail-list">
@@ -46,19 +47,28 @@
       </tbody>
     </table>
     </b-container>
-    <router-link to="/">
-      <b-button variant="outline-info">TOP</b-button>
-    </router-link>
+    <b-container class="d-flex justify-content-center">
+      <router-link to="/">
+        <b-button variant="outline-info" class="back-button">BACK</b-button>
+      </router-link>
+    </b-container>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Header from './Header'
+import Footer from './Footer'
 
 export default {
+  components: {
+    Header
+  },
   data: function () {
     return {
-      employee: {}
+      employee: {},
+      name: "DETAIL"
     }
   },
   mounted () {
@@ -70,9 +80,19 @@ export default {
 </script>
 
 <style>
+.table {
+  margin: 75px 0 0 0;
+}
+
 .detail-list {
   border: solid 1px grey;
   padding: 10px 20px 20px 20px;
   border-radius: 5px;
 }
+
+.back-button {
+  width: 200px;
+  margin: 0 0 15px 0;
+}
+
 </style>

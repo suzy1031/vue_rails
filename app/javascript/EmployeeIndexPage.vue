@@ -1,10 +1,12 @@
 <template>
   <div>
+    <Header :username='name'></Header>
     <div v-if="errors.length != 0">
       <ul v-for="e in errors" :key="e">
         <li><font color="red">{{ e }}</font></li>
       </ul>
     </div>
+    <b-container class="d-flex justify-content-center">
     <table class="table">
       <tbody>
         <tr>
@@ -30,9 +32,8 @@
         </tr>
       </tbody>
     </table>
-    <router-link to="/employees/new">
-      <b-button variant="outline-primary">NEW</b-button>
-    </router-link>
+    </b-container>
+    <Footer></Footer>
     <!-- モーダルウィンドウ（デフォルト非表示） -->
     <b-modal id="modal-1" title="BootstrapVue" v-if="showModal" @cancel="showModal = false" @ok="deleteEmployee(); showModal = false;">
       <p class="my-4">Are you sure?</p>
@@ -42,12 +43,15 @@
 
 <script>
 import axios from 'axios';
-
 import Modal from 'Modal.vue'
+import Header from './Header'
+import Footer from './Footer'
 
 export default {
   components: {
-    Modal
+    Modal,
+    Header,
+    Footer
   },
   data: function () {
     return {
@@ -55,6 +59,7 @@ export default {
       showModal: false,
       deleteTarget: -1,
       errors: '',
+      name: "Employee Data"
     }
   },
   mounted () {
@@ -93,5 +98,9 @@ export default {
 p {
   font-size: 2em;
   text-align: center;
+}
+
+.table {
+  margin: 10px 0 0 0;
 }
 </style>

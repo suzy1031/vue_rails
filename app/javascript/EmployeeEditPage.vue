@@ -1,20 +1,29 @@
 <template>
-  <employee-form-pane :errors="errors" :employee="employee" @submit="updateEmployee"></employee-form-pane>
+  <div>
+    <Header :username='name'></Header>
+    <employee-form-pane :errors="errors" :employee="employee" @submit="updateEmployee"></employee-form-pane>
+    <Footer></Footer>
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
 
 import EmployeeFormPane from 'EmployeeFormPane.vue';
+import Header from './Header'
+import Footer from './Footer'
 
 export default {
   components: {
-    EmployeeFormPane
+    EmployeeFormPane,
+    Header,
+    Footer
   },
   data() {
     return {
       employee: {},
-      errors: ''
+      errors: '',
+      name: "EDIT"
     }
   },
   mounted () {
