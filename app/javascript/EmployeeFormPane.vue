@@ -40,21 +40,25 @@
         <b-form-group id="input-group-4" label="Note" label-for="input-4">
           <b-form-input id="input-4" v-model="employee.note" type="text" placeholder="Enter Note"></b-form-input>
         </b-form-group>
+
       </div>
       </b-container>
 
       <b-container class="d-flex justify-content-center">
         <b-button variant="outline-success" type="submit" class="submit-btn">Commit</b-button>
-        <router-link to="/">
-          <b-button variant="outline-info">BACK</b-button>
-        </router-link>
+        <BackButton></BackButton>
       </b-container>
     </b-form>
   </div>
 </template>
 
 <script>
+import BackButton from './atoms/BackButton'
+
 export default {
+  components: {
+    BackButton
+  },
   props: {
     employee: {},
     errors: ''
@@ -66,7 +70,8 @@ export default {
         {value: 0, text: 'other'},
         {value: 1, text: 'male'},
         {value: 2, text: 'female'}
-      ]
+      ],
+      zip: ""
     }
   }
 

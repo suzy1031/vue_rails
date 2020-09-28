@@ -10,8 +10,8 @@
 import axios from 'axios';
 
 import EmployeeFormPane from 'EmployeeFormPane.vue';
-import Header from './Header'
-import Footer from './Footer'
+import Header from './organisms/Header'
+import Footer from './organisms/Footer'
 
 export default {
   components: {

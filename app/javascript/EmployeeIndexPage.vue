@@ -44,8 +44,8 @@
 <script>
 import axios from 'axios';
 import Modal from 'Modal.vue'
-import Header from './Header'
-import Footer from './Footer'
+import Header from './organisms/Header'
+import Footer from './organisms/Footer'
 
 export default {
   components: {
